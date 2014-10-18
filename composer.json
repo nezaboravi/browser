@@ -1,0 +1,16 @@
+{
+    "name": "nikolic/demo",
+    "description": "Just another playground",
+    "license": "GNU GPL",
+    "authors": [
+        {
+            "name": "Vladimir Nikolic",
+            "email": "nezaboravi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Core": "src/"
+        }
+    }
+}
