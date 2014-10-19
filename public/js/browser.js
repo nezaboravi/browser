@@ -3,7 +3,6 @@ $(document).ready(function ()
     browse();
     function browse(dir, walk)
     {
-
         $.getJSON("browser.php", {
             dir: dir,
             tagmode: "any",
@@ -31,7 +30,7 @@ $(document).ready(function ()
                                     "</div>" +
                                 "</a>" +
                             "</div>" +
-                            "<div class='col-md-3 col-md-offset-1'>" + val.modified + "</div>" +
+                            "<div class='col-md-3 col-md-offset-1' >" + val.modified + "</div>" +
                             "<div class='col-md-3 col-md-offset-2'>" + val.size + "</div>" +
                         "</div>" +
                         "<div style='clear:both'></div>" +
@@ -43,7 +42,6 @@ $(document).ready(function ()
                     var dir_id = dir.replace(/\//g, "_").replace(/ /g, "_");
                     $("<ul />", {
                         "class": "filetree",
-                        style: "width: 90%",
                         html: tmp_item
                     }).appendTo('#' + dir_id);
                 }
@@ -53,7 +51,7 @@ $(document).ready(function ()
                 $("<ul />", {
                     "class": "filetree",
                     html: items.join("")
-                }).appendTo('#demo');
+                }).appendTo('#grid');
             }
         });
     }
@@ -68,7 +66,9 @@ $(document).ready(function ()
         {
             link.parent().parent().parent().removeClass('collapsed').addClass('expanded');
             browse(link.data('path'), false);
-
+            console.log(link.parent().parent().parent().find('UL').addClass('klasa'));
+            link.parent().parent().parent().find('UL').addClass('klasa')
+            link.parent().parent().parent().find('UL li div').find('col-md-offset-1').addClass('col-md-offset-fix')
         }
         else
         {
